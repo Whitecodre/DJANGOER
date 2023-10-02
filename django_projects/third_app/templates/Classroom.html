@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+    margin: 0 20px;
+    font-family: 'lora';
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline; 
+    color: #04AA6D; 
+    font-family: 'arvo';
+}
+
+table{
+    width: 100%;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+table tr{
+    text-align: center;
+    font-weight: 500;
+}
+
+table tr th{
+    font-size: 16px;
+    border: 1px solid #333;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #fff;
+    background-color: #04AA6D;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:hover {background-color: #ddd;}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.links a{
+    background-color: #04AA6D;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+    margin-right: 8px;
+    transition: 0.3s;
+}
+
+.links a:hover{
+    background-color: #027e50;
+}
+    </style>
+</head>
+<body>
+    <h1>
+        <u>Hello World To Class</u>
+    </h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Age</th>
+            <th>DOB</th>
+            <th>Nationality</th>
+            <th>State Of Origin</th>
+        </tr>
+        {% for i in key %}
+        <tr>
+            <td>{{ i.ID }}</td>
+            <td>{{ i.Firstname }}</td>
+            <td>{{ i.Lastname }}</td>
+            <td>{{ i.Email_Address }}</td>
+            <td>+234-{{ i.Phone_Number }}</td>
+            <td>{{ i.Age }}</td>
+            <td>{{ i.DOB }}</td>
+            <td>{{ i.Nationality }}</td>
+            <td>{{ i.State_Of_Origin}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    <div class="links"> 
+        <a href="{% url 'appcontact' %}">Contact page</a><br>
+        <a href="{% url 'appfirst' %}">Home page</a>
+    </div>
+</body>
+</html>
